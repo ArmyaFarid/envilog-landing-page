@@ -1,0 +1,369 @@
+<!doctype html>
+<!--
+    enviLog — landing page
+    ======================
+    Static site: plain HTML + CSS + vanilla JS. No build step, no npm.
+
+    Deploy
+    ------
+    1. Upload the whole `envilog/` folder (index.html, css/, js/, assets/) to any static host
+       (Apache, Nginx, Netlify, Vercel, GitHub Pages, S3, cPanel…).
+    2. Make sure `index.html` is served at the site root.
+    3. If the domain is not https://envilog.springysoft.com/, update the absolute URLs in the
+       <head> (canonical, og:url, og:image, twitter:image, JSON-LD).
+
+    Local preview: open `index.html` directly in a browser, or run any static server
+    from this folder (e.g. `python3 -m http.server`).
+
+    External resources: Google Fonts only (Sora + Plus Jakarta Sans). Icons are inline SVG.
+-->
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>enviLog | Optimiser durablement vos processus d'affaires</title>
+    <meta name="description" content="Optimiser durablement vos processus d'affaires. enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.">
+    <meta name="theme-color" content="#021821">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://envilog.springysoft.com/">
+
+    <!-- Switch the no-js class before first paint so reveal styles never hide content without JS -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="enviLog">
+    <meta property="og:title" content="enviLog | Optimiser durablement vos processus d'affaires">
+    <meta property="og:description" content="enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.">
+    <meta property="og:url" content="https://envilog.springysoft.com/">
+    <meta property="og:image" content="https://envilog.springysoft.com/assets/img/app0.png">
+    <meta property="og:image:width" content="668">
+    <meta property="og:image:height" content="373">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="enviLog | Optimiser durablement vos processus d'affaires">
+    <meta name="twitter:description" content="enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.">
+    <meta name="twitter:image" content="https://envilog.springysoft.com/assets/img/app0.png">
+
+    <!-- Icons (derived from e.png) -->
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <!-- Preload the hero image (LCP candidate) -->
+    <link rel="preload" as="image" href="assets/img/app0.webp" type="image/webp" fetchpriority="high">
+
+    <!-- Fonts: loaded without blocking render; font-display=swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"></noscript>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "enviLog",
+        "url": "https://envilog.springysoft.com/",
+        "logo": "https://envilog.springysoft.com/assets/img/logo.png",
+        "sameAs": ["https://www.linkedin.com/company/envilogsolution"]
+    }
+    </script>
+
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
+
+    <!-- ============================================================
+         HEADER / NAV
+         ============================================================ -->
+    <header class="site-header" data-header>
+        <div class="container site-header__inner">
+            <a class="brand" href="#top">
+                <span class="brand__mark">
+                    <picture>
+                        <source srcset="assets/img/e.webp" type="image/webp">
+                        <img src="assets/img/e.png" alt="" width="995" height="658">
+                    </picture>
+                </span>
+                <span class="brand__name">enviLog</span>
+            </a>
+
+            <nav class="nav" aria-label="Navigation principale">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#solutions">Solutions</a></li>
+                    <li><a class="nav__link" href="#application">Notre application web</a></li>
+                    <li><a class="nav__link" href="#axes">Nos axes d'interventions</a></li>
+                    <li><a class="nav__link" href="#conception">Conception et développement</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn--primary btn--sm site-header__cta" href="#contactus" data-magnetic><span>Nous contacter</span></a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" data-menu-toggle>
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile full-screen menu -->
+    <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+        <nav aria-label="Navigation mobile">
+            <ul class="mobile-menu__list">
+                <li><a class="mobile-menu__link" href="#solutions">Solutions</a></li>
+                <li><a class="mobile-menu__link" href="#application">Notre application web</a></li>
+                <li><a class="mobile-menu__link" href="#axes">Nos axes d'interventions</a></li>
+                <li><a class="mobile-menu__link" href="#conception">Conception et développement</a></li>
+            </ul>
+        </nav>
+        <a class="btn btn--primary btn--lg mobile-menu__cta" href="#contactus"><span>Nous contacter</span></a>
+    </div>
+
+    <main id="main">
+
+        <!-- ============================================================
+             HERO
+             ============================================================ -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero__bg" aria-hidden="true">
+                <span class="aurora aurora--1"></span>
+                <span class="aurora aurora--2"></span>
+                <span class="aurora aurora--3"></span>
+                <span class="hero__grid"></span>
+            </div>
+
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <div class="hero__mark" data-reveal="zoom">
+                        <picture>
+                            <source srcset="assets/img/e.webp" type="image/webp">
+                            <img src="assets/img/e.png" alt="enviLog" width="995" height="658">
+                        </picture>
+                    </div>
+                    <h1 class="hero__title" id="hero-title" data-split-words>Optimiser durablement vos processus d'affaires</h1>
+                    <div class="hero__actions" data-reveal="fade-up" data-delay="450">
+                        <a class="btn btn--primary btn--lg" href="#contactus" data-magnetic><span>Nous contacter</span></a>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-reveal="fade-left" data-delay="250">
+                    <div class="hero__glow" aria-hidden="true"></div>
+                    <div class="device" data-tilt>
+                        <div class="device__bar" aria-hidden="true">
+                            <span class="device__dot"></span><span class="device__dot"></span><span class="device__dot"></span>
+                            <span class="device__url"></span>
+                        </div>
+                        <div class="device__screen">
+                            <picture>
+                                <source srcset="assets/img/app0.webp" type="image/webp">
+                                <img src="assets/img/app0.png" alt="Notre application web" width="668" height="373" fetchpriority="high" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#solutions" aria-label="Solutions">
+                <span class="scroll-cue__mouse" aria-hidden="true"><span class="scroll-cue__wheel"></span></span>
+            </a>
+        </section>
+
+        <!-- ============================================================
+             SOLUTIONS — e-Gouvernement / CRM
+             ============================================================ -->
+        <section class="section section--light" id="solutions" aria-labelledby="solutions-title">
+            <div class="container">
+                <div class="solutions__logo" data-reveal="fade-up">
+                    <picture>
+                        <source srcset="assets/img/logo.webp" type="image/webp">
+                        <img src="assets/img/logo.png" alt="enviLog" width="1992" height="491" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <h2 class="visually-hidden" id="solutions-title">e-Gouvernement — CRM</h2>
+
+                <div class="bento">
+                    <article class="card" data-reveal="fade-up">
+                        <div class="card__media">
+                            <picture>
+                                <source srcset="assets/img/gov1.webp" type="image/webp">
+                                <img src="assets/img/gov1.jpeg" alt="" width="980" height="980" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">e-Gouvernement</h3>
+                            <p class="card__text">Des ministères et organismes plus modernes.</p>
+                            <!-- Sub-line "Ministère - Sociétés d'État - Villes intelligentes - Santé - Energie - Éducation" split on " - " -->
+                            <ul class="tags">
+                                <li class="tag">Ministère</li>
+                                <li class="tag">Sociétés d'État</li>
+                                <li class="tag">Villes intelligentes</li>
+                                <li class="tag">Santé</li>
+                                <li class="tag">Energie</li>
+                                <li class="tag">Éducation</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal="fade-up" data-delay="120">
+                        <div class="card__media">
+                            <picture>
+                                <source srcset="assets/img/crm2.webp" type="image/webp">
+                                <img src="assets/img/crm2.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">CRM</h3>
+                            <p class="card__text">Pour gérer leurs interactions avec les clients et prospects. Notre système CRM aide vos entreprises à améliorer leurs relations avec les clients, à rationaliser les processus et à augmenter leur rentabilité.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             NOTRE APPLICATION WEB
+             ============================================================ -->
+        <section class="section section--tint" id="application" aria-labelledby="application-title">
+            <div class="container split">
+                <div class="split__media" data-reveal="fade-right">
+                    <div class="blob blob--app" aria-hidden="true" data-parallax="-0.08"></div>
+                    <div class="frame float" data-parallax="0.06">
+                        <picture>
+                            <source srcset="assets/img/2.webp" type="image/webp">
+                            <img src="assets/img/2.png" alt="Notre application web" width="449" height="300" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                </div>
+                <div class="split__content" data-reveal="fade-left" data-delay="100">
+                    <h2 class="section-title" id="application-title">Notre application web</h2>
+                    <p class="lead">enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.</p>
+                    <p class="lead">Chaque secteur bénéficie des capacités modulaires et flexibles d’enviLog, permettant d’adapter les fonctionnalités à des besoins spécifiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             NOS AXES D'INTERVENTIONS
+             ============================================================ -->
+        <section class="section section--light" id="axes" aria-labelledby="axes-title">
+            <div class="container">
+                <header class="section-head" data-reveal="fade-up">
+                    <h2 class="section-title" id="axes-title">Nos axes d'interventions</h2>
+                    <p class="section-sub">Nous intervenons dans différents secteurs pour vous offrir une solution à la pointe</p>
+                </header>
+
+                <ul class="tiles" data-stagger="80">
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/10.webp" type="image/webp"><img src="assets/img/10.png" alt="" width="81" height="81" loading="lazy" decoding="async"></picture></span><span class="tile__label">E-GOUVERNEMENT</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/13.webp" type="image/webp"><img src="assets/img/13.png" alt="" width="512" height="512" loading="lazy" decoding="async"></picture></span><span class="tile__label">SANTÉ</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/11.webp" type="image/webp"><img src="assets/img/11.png" alt="" width="81" height="81" loading="lazy" decoding="async"></picture></span><span class="tile__label">INDUSTRIE MINIÈRE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/6.webp" type="image/webp"><img src="assets/img/6.png" alt="" width="512" height="512" loading="lazy" decoding="async"></picture></span><span class="tile__label">HUMANITAIRE ET ACTION SOCIALE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/9.webp" type="image/webp"><img src="assets/img/9.png" alt="" width="80" height="83" loading="lazy" decoding="async"></picture></span><span class="tile__label">AGRICULTURE ET ÉLEVAGE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/7.webp" type="image/webp"><img src="assets/img/7.png" alt="" width="81" height="81" loading="lazy" decoding="async"></picture></span><span class="tile__label">ÉDUCATION</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/8.webp" type="image/webp"><img src="assets/img/8.png" alt="" width="80" height="81" loading="lazy" decoding="async"></picture></span><span class="tile__label">SERVICES PROFESSIONNELS</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="tile__icon"><picture><source srcset="assets/img/12.webp" type="image/webp"><img src="assets/img/12.png" alt="" width="512" height="512" loading="lazy" decoding="async"></picture></span><span class="tile__label">DÉFENSE</span></div></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             CONCEPTION ET DÉVELOPPEMENT
+             ============================================================ -->
+        <section class="section section--tint" id="conception" aria-labelledby="conception-title">
+            <div class="container split split--reverse">
+                <div class="split__media" data-reveal="fade-left">
+                    <div class="shapes" aria-hidden="true" data-parallax="-0.06">
+                        <span class="shape shape--1"></span>
+                        <span class="shape shape--2"></span>
+                        <span class="shape shape--3"></span>
+                    </div>
+                    <div class="frame frame--round" data-parallax="0.04">
+                        <picture>
+                            <source srcset="assets/img/1.webp" type="image/webp">
+                            <img src="assets/img/1.png" alt="CONCEPTION" width="449" height="450" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                </div>
+                <div class="split__content" data-reveal="fade-right" data-delay="100">
+                    <h2 class="section-title" id="conception-title">Conception et développement</h2>
+                    <p class="lead">Nous détenons une expertise de pointe dans de nombreux services tels que : la conception et le développement de systèmes d'information, <span class="hl">l'intelligence d'affaires (BI)</span> et <span class="hl">l'intelligence artificielle (AI)</span>, le développement à distance, l'infrastructure technologique, l'administration des bases de données et l'administration de systèmes.</p>
+                    <p class="lead">Notre objectif est d'accompagner nos clients dans l'acquisition, la gestion et l'exploitation de leurs données afin qu'ils puissent en tirer le maximum de valeurs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             PROPULSÉ PAR
+             ============================================================ -->
+        <section class="powered" aria-labelledby="powered-title">
+            <div class="container powered__inner" data-reveal="fade-up">
+                <h2 class="powered__label" id="powered-title">Propulsé par</h2>
+                <a class="powered__logo" href="https://westml-innovation.com" target="_blank" rel="noopener noreferrer">
+                    <picture>
+                        <source srcset="assets/img/westml.webp" type="image/webp">
+                        <img src="assets/img/westml.png" alt="westml-innovation" width="805" height="395" loading="lazy" decoding="async">
+                    </picture>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             CTA — #contactus
+             ============================================================ -->
+        <section class="cta-section" id="contactus" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta" data-reveal="zoom">
+                    <div class="cta__bg" aria-hidden="true">
+                        <span class="orb orb--1"></span>
+                        <span class="orb orb--2"></span>
+                        <span class="orb orb--3"></span>
+                    </div>
+                    <h2 class="cta__title" id="cta-title">Passez à l'action</h2>
+                    <p class="cta__text">Contactez-nous pour une démonstration personnalisée de notre outil et découvrez comment il peut transformer votre processus décisionnel.</p>
+                    <a class="btn btn--primary btn--xl btn--arrow" href="https://westml-innovation.com/en/#contact" target="_blank" rel="noopener noreferrer" data-magnetic>
+                        <span>Nous contacter</span>
+                        <svg class="btn__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__top">
+                <a class="brand brand--footer" href="#top">
+                    <span class="brand__mark">
+                        <picture>
+                            <source srcset="assets/img/e.webp" type="image/webp">
+                            <img src="assets/img/e.png" alt="" width="995" height="658" loading="lazy" decoding="async">
+                        </picture>
+                    </span>
+                    <span class="brand__name">enviLog</span>
+                </a>
+                <a class="social" href="https://www.linkedin.com/company/envilogsolution" target="_blank" rel="noopener noreferrer">
+                    <picture>
+                        <source srcset="assets/img/linkedinicon.webp" type="image/webp">
+                        <img src="assets/img/linkedinicon.png" alt="LinkedIn" width="500" height="500" loading="lazy" decoding="async">
+                    </picture>
+                </a>
+            </div>
+            <p class="site-footer__copy">Copyright &copy; <span data-year>2024</span> envilog</p>
+        </div>
+    </footer>
+
+    <a class="to-top" href="#top" aria-label="Haut de page" data-to-top>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+</body>
+</html>
