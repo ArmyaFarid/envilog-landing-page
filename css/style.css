@@ -40,7 +40,6 @@
     /* Typography */
     --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-display: "Sora", "Plus Jakarta Sans", system-ui, sans-serif;
-    --fs-h1: clamp(2.75rem, 1.6rem + 3.4vw, 4.5rem);
     --fs-h2: clamp(2rem, 1.3rem + 2.4vw, 3.25rem);
     --fs-h3: clamp(1.5rem, 1.2rem + 1vw, 2rem);
     --fs-lead: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
@@ -711,7 +710,7 @@ section[id] {
 .hero__title {
     max-width: 16ch;
     margin-inline: auto;
-    font: 800 var(--fs-h1)/1.04 var(--font-display);
+    font: 800 clamp(2.125rem, 1.4rem + 3.6vw, 4.5rem)/1.06 var(--font-display);
     letter-spacing: -0.035em;
     text-wrap: balance;
 }
@@ -1332,15 +1331,7 @@ section[id] {
 .powered__logo img {
     height: 48px;
     width: auto;
-    filter: grayscale(1);
-    opacity: 0.75;
-    transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-}
-
-.powered__logo:hover img,
-.powered__logo:focus-visible img {
-    filter: none;
-    opacity: 1;
+    transition: transform var(--dur) var(--ease);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1688,12 +1679,26 @@ section[id] {
     }
 
     /* Word-by-word H1 */
+    /* Entrance (blur + rise), then a permanent wave + light sweep word to word */
     .js .word {
         display: inline-block;
+        padding-block: 0.08em 0.16em;
+        margin-block: -0.08em -0.16em;
         opacity: 0;
-        transform: translateY(0.4em);
-        animation: word-in var(--dur-slow) var(--ease) forwards;
-        animation-delay: calc(150ms + var(--i) * 70ms);
+        filter: blur(8px);
+        transform: translateY(0.45em) rotate(2deg);
+        background: linear-gradient(100deg, currentColor 0 40%, var(--brand-teal-light) 50%, currentColor 60% 100%) 100% 0 / 300% 100% no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation:
+            word-in var(--dur-slow) var(--ease) forwards,
+            word-shine 4s ease-in-out infinite,
+            word-wave 3.2s ease-in-out infinite alternate;
+        animation-delay:
+            calc(150ms + var(--i) * 70ms),
+            calc(1.2s + var(--i) * 160ms),
+            calc(var(--i) * -400ms);
     }
 
     /* Nav slides down on load */
@@ -1703,7 +1708,25 @@ section[id] {
 }
 
 @keyframes word-in {
-    to { opacity: 1; transform: none; }
+    to { opacity: 1; filter: none; transform: none; }
+}
+
+@keyframes word-shine {
+    0% { background-position: 100% 0; }
+    60%, 100% { background-position: 0 0; }
+}
+
+/* Uses `translate` so it composes with the entrance `transform` */
+@keyframes word-wave {
+    from { translate: 0 0.04em; }
+    to { translate: 0 -0.06em; }
+}
+
+@media (forced-colors: active) {
+    .js .word {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+    }
 }
 
 @keyframes nav-in {
