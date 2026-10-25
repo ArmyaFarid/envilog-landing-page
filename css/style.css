@@ -501,8 +501,36 @@ section[id] {
     transform: none;
 }
 
+/* FR / EN switch: sits left of the menu toggle on mobile, after the CTA on desktop */
+.lang-switch {
+    display: grid;
+    place-items: center;
+    min-width: 48px;
+    height: 48px;
+    margin-left: auto;
+    padding-inline: 0.75rem;
+    font: 700 0.85rem/1 var(--font-body);
+    letter-spacing: 0.06em;
+    color: var(--on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.lang-switch:hover {
+    border-color: var(--brand-teal);
+    background: rgba(0, 189, 156, 0.14);
+}
+
+.lang-switch + .menu-toggle {
+    margin-left: 0;
+}
+
 /* No JS: the toggle is useless, keep the inline nav visible instead (scrollable row) */
-.no-js .menu-toggle {
+.no-js .menu-toggle,
+.no-js .lang-switch {
     display: none;
 }
 
@@ -523,6 +551,10 @@ section[id] {
 
     .menu-toggle {
         display: none;
+    }
+
+    .lang-switch {
+        margin-left: 0;
     }
 }
 

@@ -23,8 +23,8 @@
         Illustrations: custom inline SVG in the brand palette (no external files).
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>enviLog | Optimiser durablement vos processus d'affaires</title>
-    <meta name="description" content="Optimiser durablement vos processus d'affaires. enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.">
+    <title data-i18n="meta.title">enviLog | Optimiser durablement vos processus d'affaires</title>
+    <meta name="description" data-i18n-content="meta.description" content="Optimiser durablement vos processus d'affaires. enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.">
     <meta name="theme-color" content="#021821">
     <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://envilog.springysoft.com/">
@@ -74,7 +74,7 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
-    <a class="skip-link" href="#main">Aller au contenu</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Aller au contenu</a>
 
     <!-- Scroll progress -->
     <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
@@ -94,16 +94,18 @@
                 <span class="brand__name">enviLog</span>
             </a>
 
-            <nav class="nav" aria-label="Navigation principale">
+            <nav class="nav" aria-label="Navigation principale" data-i18n-label="nav.main">
                 <ul class="nav__list">
-                    <li><a class="nav__link" href="#solutions">Solutions</a></li>
-                    <li><a class="nav__link" href="#application">Notre application web</a></li>
-                    <li><a class="nav__link" href="#axes">Nos axes d'interventions</a></li>
-                    <li><a class="nav__link" href="#conception">Conception et développement</a></li>
+                    <li><a class="nav__link" href="#solutions" data-i18n="nav.solutions">Solutions</a></li>
+                    <li><a class="nav__link" href="#application" data-i18n="nav.application">Notre application web</a></li>
+                    <li><a class="nav__link" href="#axes" data-i18n="nav.axes">Nos axes d'interventions</a></li>
+                    <li><a class="nav__link" href="#conception" data-i18n="nav.conception">Conception et développement</a></li>
                 </ul>
             </nav>
 
-            <a class="btn btn--primary btn--sm site-header__cta" href="#contactus" data-magnetic><span>Nous contacter</span></a>
+            <a class="btn btn--primary btn--sm site-header__cta" href="#contactus" data-magnetic><span data-i18n="contact">Nous contacter</span></a>
+
+            <button class="lang-switch" type="button" lang="en" aria-label="English (EN)" data-lang-switch>EN</button>
 
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" data-menu-toggle>
                 <svg class="icon menu-toggle__open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -114,15 +116,15 @@
 
     <!-- Mobile full-screen menu -->
     <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
-        <nav aria-label="Navigation mobile">
+        <nav aria-label="Navigation mobile" data-i18n-label="nav.mobile">
             <ul class="mobile-menu__list">
-                <li><a class="mobile-menu__link" href="#solutions">Solutions</a></li>
-                <li><a class="mobile-menu__link" href="#application">Notre application web</a></li>
-                <li><a class="mobile-menu__link" href="#axes">Nos axes d'interventions</a></li>
-                <li><a class="mobile-menu__link" href="#conception">Conception et développement</a></li>
+                <li><a class="mobile-menu__link" href="#solutions" data-i18n="nav.solutions">Solutions</a></li>
+                <li><a class="mobile-menu__link" href="#application" data-i18n="nav.application">Notre application web</a></li>
+                <li><a class="mobile-menu__link" href="#axes" data-i18n="nav.axes">Nos axes d'interventions</a></li>
+                <li><a class="mobile-menu__link" href="#conception" data-i18n="nav.conception">Conception et développement</a></li>
             </ul>
         </nav>
-        <a class="btn btn--primary btn--lg btn--arrow mobile-menu__cta" href="#contactus"><span>Nous contacter</span><svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn btn--primary btn--lg btn--arrow mobile-menu__cta" href="#contactus"><span data-i18n="contact">Nous contacter</span><svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
 
     <main id="main">
@@ -146,9 +148,9 @@
                             <img src="assets/img/e.png" alt="enviLog" width="995" height="658">
                         </picture>
                     </div>
-                    <h1 class="hero__title" id="hero-title" data-split-words>Optimiser durablement vos processus d'affaires</h1>
+                    <h1 class="hero__title" id="hero-title" data-split-words data-i18n="hero.title">Optimiser durablement vos processus d'affaires</h1>
                     <div class="hero__actions" data-reveal="fade-up" data-delay="450">
-                        <a class="btn btn--primary btn--lg btn--arrow" href="#contactus" data-magnetic><span>Nous contacter</span><svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                        <a class="btn btn--primary btn--lg btn--arrow" href="#contactus" data-magnetic><span data-i18n="contact">Nous contacter</span><svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                     </div>
                 </div>
 
@@ -161,7 +163,7 @@
                         </div>
                         <div class="device__screen">
                             <!-- Illustration: abstract dashboard (KPI cards, bar + line chart, workflow nodes, table rows) -->
-                            <svg class="il" viewBox="0 0 600 360" role="img" aria-label="Notre application web">
+                            <svg class="il" viewBox="0 0 600 360" role="img" aria-label="Notre application web" data-i18n-label="nav.application">
                                 <!-- Sidebar -->
                                 <rect class="il-navy" x="0" y="0" width="96" height="360"/>
                                 <circle class="il-teal" cx="28" cy="30" r="10"/>
@@ -261,7 +263,7 @@
                 </div>
             </div>
 
-            <a class="scroll-cue" href="#solutions" aria-label="Solutions">
+            <a class="scroll-cue" href="#solutions" aria-label="Solutions" data-i18n-label="nav.solutions">
                 <svg class="icon scroll-cue__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="7"/><path class="scroll-cue__wheel" d="M12 6v4"/></svg>
             </a>
         </section>
@@ -277,7 +279,7 @@
                         <img src="assets/img/logo.png" alt="enviLog" width="1992" height="491" loading="lazy" decoding="async">
                     </picture>
                 </div>
-                <h2 class="visually-hidden" id="solutions-title">e-Gouvernement — CRM</h2>
+                <h2 class="visually-hidden" id="solutions-title" data-i18n="solutions.title">e-Gouvernement — CRM</h2>
 
                 <div class="bento">
                     <article class="card" data-reveal="fade-up">
@@ -327,16 +329,16 @@
                             </svg>
                         </div>
                         <div class="card__body">
-                            <h3 class="card__title">e-Gouvernement</h3>
-                            <p class="card__text">Des ministères et organismes plus modernes.</p>
+                            <h3 class="card__title" data-i18n="egov.title">e-Gouvernement</h3>
+                            <p class="card__text" data-i18n="egov.text">Des ministères et organismes plus modernes.</p>
                             <!-- Sub-line "Ministère - Sociétés d'État - Villes intelligentes - Santé - Energie - Éducation" split on " - " -->
                             <ul class="tags">
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Ministère</li>
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Sociétés d'État</li>
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Villes intelligentes</li>
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Santé</li>
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Energie</li>
-                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Éducation</li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag1">Ministère</span></li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag2">Sociétés d'État</span></li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag3">Villes intelligentes</span></li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag4">Santé</span></li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag5">Energie</span></li>
+                                <li class="tag"><svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="egov.tag6">Éducation</span></li>
                             </ul>
                         </div>
                     </article>
@@ -393,7 +395,7 @@
                         </div>
                         <div class="card__body">
                             <h3 class="card__title">CRM</h3>
-                            <p class="card__text">Pour gérer leurs interactions avec les clients et prospects. Notre système CRM aide vos entreprises à améliorer leurs relations avec les clients, à rationaliser les processus et à augmenter leur rentabilité.</p>
+                            <p class="card__text" data-i18n="crm.text">Pour gérer leurs interactions avec les clients et prospects. Notre système CRM aide vos entreprises à améliorer leurs relations avec les clients, à rationaliser les processus et à augmenter leur rentabilité.</p>
                         </div>
                     </article>
                 </div>
@@ -409,7 +411,7 @@
                     <div class="blob blob--app" aria-hidden="true" data-parallax="-0.08"></div>
                     <div class="frame float" data-parallax="0.06">
                         <!-- Illustration: modular blocks snapping together -->
-                        <svg class="il" viewBox="0 0 392 300" role="img" aria-label="Notre application web">
+                        <svg class="il" viewBox="0 0 392 300" role="img" aria-label="Notre application web" data-i18n-label="nav.application">
                             <!-- Module: chart -->
                             <rect class="il-surface il-stroke" x="20" y="20" width="228" height="120" rx="14"/>
                             <rect class="il-line" x="38" y="36" width="64" height="8" rx="4"/>
@@ -463,9 +465,9 @@
                     </div>
                 </div>
                 <div class="split__content" data-reveal="fade-left" data-delay="100">
-                    <h2 class="section-title" id="application-title">Notre application web</h2>
-                    <p class="lead">enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.</p>
-                    <p class="lead">Chaque secteur bénéficie des capacités modulaires et flexibles d’enviLog, permettant d’adapter les fonctionnalités à des besoins spécifiques.</p>
+                    <h2 class="section-title" id="application-title" data-i18n="nav.application">Notre application web</h2>
+                    <p class="lead" data-i18n="app.lead1">enviLog détient une compétence innovante du traitement des données provenant du secteur de l’e-gouvernement et des sociétés privées.</p>
+                    <p class="lead" data-i18n="app.lead2">Chaque secteur bénéficie des capacités modulaires et flexibles d’enviLog, permettant d’adapter les fonctionnalités à des besoins spécifiques.</p>
                 </div>
             </div>
         </section>
@@ -476,19 +478,19 @@
         <section class="section section--light" id="axes" aria-labelledby="axes-title">
             <div class="container">
                 <header class="section-head" data-reveal="fade-up">
-                    <h2 class="section-title" id="axes-title">Nos axes d'interventions</h2>
-                    <p class="section-sub">Nous intervenons dans différents secteurs pour vous offrir une solution à la pointe</p>
+                    <h2 class="section-title" id="axes-title" data-i18n="nav.axes">Nos axes d'interventions</h2>
+                    <p class="section-sub" data-i18n="axes.sub">Nous intervenons dans différents secteurs pour vous offrir une solution à la pointe</p>
                 </header>
 
                 <ul class="tiles" data-stagger="80">
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span><span class="tile__label">E-GOUVERNEMENT</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span><span class="tile__label">SANTÉ</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912"/><path d="M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958 1 1 0 0 0 5.58 4.71a22 22 0 0 1 6.318 3.393"/><path d="M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="M19.686 8.314a12.501 12.501 0 0 1 1.356 10.225 1 1 0 0 1-1.751-.119 22 22 0 0 0-3.393-6.319"/></svg></span><span class="tile__label">INDUSTRIE MINIÈRE</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></svg></span><span class="tile__label">HUMANITAIRE ET ACTION SOCIALE</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/></svg></span><span class="tile__label">AGRICULTURE ET ÉLEVAGE</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="tile__label">ÉDUCATION</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span><span class="tile__label">SERVICES PROFESSIONNELS</span></div></li>
-                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span><span class="tile__label">DÉFENSE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span><span class="tile__label" data-i18n="axes.t1">E-GOUVERNEMENT</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span><span class="tile__label" data-i18n="axes.t2">SANTÉ</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912"/><path d="M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958 1 1 0 0 0 5.58 4.71a22 22 0 0 1 6.318 3.393"/><path d="M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="M19.686 8.314a12.501 12.501 0 0 1 1.356 10.225 1 1 0 0 1-1.751-.119 22 22 0 0 0-3.393-6.319"/></svg></span><span class="tile__label" data-i18n="axes.t3">INDUSTRIE MINIÈRE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></svg></span><span class="tile__label" data-i18n="axes.t4">HUMANITAIRE ET ACTION SOCIALE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/></svg></span><span class="tile__label" data-i18n="axes.t5">AGRICULTURE ET ÉLEVAGE</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="tile__label" data-i18n="axes.t6">ÉDUCATION</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span><span class="tile__label" data-i18n="axes.t7">SERVICES PROFESSIONNELS</span></div></li>
+                    <li data-reveal="fade-up"><div class="tile" data-tilt><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span><span class="tile__label" data-i18n="axes.t8">DÉFENSE</span></div></li>
                 </ul>
             </div>
         </section>
@@ -506,7 +508,7 @@
                     </div>
                     <div class="frame" data-parallax="0.04">
                         <!-- Illustration: code editor, database and AI network -->
-                        <svg class="il" viewBox="0 0 460 400" role="img" aria-label="CONCEPTION">
+                        <svg class="il" viewBox="0 0 460 400" role="img" aria-label="CONCEPTION" data-i18n-label="conception.label">
                             <!-- Flows -->
                             <path class="il-flow" d="M280 150C300 150 300 172 300 188M150 300C220 300 250 260 288 260M385 110C385 140 370 140 370 158"/>
 
@@ -562,9 +564,9 @@
                     </div>
                 </div>
                 <div class="split__content" data-reveal="fade-right" data-delay="100">
-                    <h2 class="section-title" id="conception-title">Conception et développement</h2>
-                    <p class="lead">Nous détenons une expertise de pointe dans de nombreux services tels que : la conception et le développement de systèmes d'information, <span class="hl">l'intelligence d'affaires (BI)</span> et <span class="hl">l'intelligence artificielle (AI)</span>, le développement à distance, l'infrastructure technologique, l'administration des bases de données et l'administration de systèmes.</p>
-                    <p class="lead">Notre objectif est d'accompagner nos clients dans l'acquisition, la gestion et l'exploitation de leurs données afin qu'ils puissent en tirer le maximum de valeurs.</p>
+                    <h2 class="section-title" id="conception-title" data-i18n="nav.conception">Conception et développement</h2>
+                    <p class="lead" data-i18n="conception.lead1">Nous détenons une expertise de pointe dans de nombreux services tels que : la conception et le développement de systèmes d'information, <span class="hl">l'intelligence d'affaires (BI)</span> et <span class="hl">l'intelligence artificielle (AI)</span>, le développement à distance, l'infrastructure technologique, l'administration des bases de données et l'administration de systèmes.</p>
+                    <p class="lead" data-i18n="conception.lead2">Notre objectif est d'accompagner nos clients dans l'acquisition, la gestion et l'exploitation de leurs données afin qu'ils puissent en tirer le maximum de valeurs.</p>
                 </div>
             </div>
         </section>
@@ -574,7 +576,7 @@
              ============================================================ -->
         <section class="powered" aria-labelledby="powered-title">
             <div class="container powered__inner" data-reveal="fade-up">
-                <h2 class="powered__label" id="powered-title">Propulsé par</h2>
+                <h2 class="powered__label" id="powered-title" data-i18n="powered">Propulsé par</h2>
                 <a class="powered__logo" href="https://westml-innovation.com" target="_blank" rel="noopener noreferrer">
                     <picture>
                         <source srcset="assets/img/westml.webp" type="image/webp">
@@ -595,10 +597,10 @@
                         <span class="orb orb--2"></span>
                         <span class="orb orb--3"></span>
                     </div>
-                    <h2 class="cta__title" id="cta-title">Passez à l'action</h2>
-                    <p class="cta__text">Contactez-nous pour une démonstration personnalisée de notre outil et découvrez comment il peut transformer votre processus décisionnel.</p>
+                    <h2 class="cta__title" id="cta-title" data-i18n="cta.title">Passez à l'action</h2>
+                    <p class="cta__text" data-i18n="cta.text">Contactez-nous pour une démonstration personnalisée de notre outil et découvrez comment il peut transformer votre processus décisionnel.</p>
                     <a class="btn btn--primary btn--xl btn--arrow" href="https://westml-innovation.com/en/#contact" target="_blank" rel="noopener noreferrer" data-magnetic>
-                        <span>Nous contacter</span>
+                        <span data-i18n="contact">Nous contacter</span>
                         <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -630,7 +632,7 @@
         </div>
     </footer>
 
-    <a class="to-top" href="#top" aria-label="Haut de page" data-to-top>
+    <a class="to-top" href="#top" aria-label="Haut de page" data-i18n-label="totop" data-to-top>
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
     </a>
 </body>

@@ -20,7 +20,7 @@
     /* ----------------------------------------------------------------------
        2. Hero title: wrap each word in a span (text stays identical)
        ---------------------------------------------------------------------- */
-    document.querySelectorAll("[data-split-words]").forEach((el) => {
+    const splitWords = (el) => {
         const words = el.textContent.trim().split(/\s+/);
         el.textContent = "";
         words.forEach((word, i) => {
@@ -31,6 +31,106 @@
             el.append(span);
             if (i < words.length - 1) el.append(" ");
         });
+    };
+
+    /* ----------------------------------------------------------------------
+       2b. FR / EN translation. French lives in the HTML; English is below.
+           Choice order: ?lang= parameter, saved choice, browser language.
+       ---------------------------------------------------------------------- */
+    const EN = {
+        "meta.title": "enviLog | Sustainably optimize your business processes",
+        "meta.description": "Sustainably optimize your business processes. enviLog has innovative expertise in processing data from the e-government sector and private companies.",
+        "skip": "Skip to content",
+        "nav.main": "Main navigation",
+        "nav.mobile": "Mobile navigation",
+        "nav.solutions": "Solutions",
+        "nav.application": "Our web application",
+        "nav.axes": "Our areas of focus",
+        "nav.conception": "Design and development",
+        "contact": "Contact us",
+        "hero.title": "Sustainably optimize your business processes",
+        "solutions.title": "e-Government — CRM",
+        "egov.title": "e-Government",
+        "egov.text": "More modern ministries and agencies.",
+        "egov.tag1": "Ministry",
+        "egov.tag2": "State-owned companies",
+        "egov.tag3": "Smart cities",
+        "egov.tag4": "Health",
+        "egov.tag5": "Energy",
+        "egov.tag6": "Education",
+        "crm.text": "To manage their interactions with customers and prospects. Our CRM system helps your business improve customer relationships, streamline processes and increase profitability.",
+        "app.lead1": "enviLog has innovative expertise in processing data from the e-government sector and private companies.",
+        "app.lead2": "Every sector benefits from enviLog’s modular and flexible capabilities, so features can be tailored to specific needs.",
+        "axes.sub": "We work across many sectors to offer you a cutting-edge solution",
+        "axes.t1": "E-GOVERNMENT",
+        "axes.t2": "HEALTH",
+        "axes.t3": "MINING",
+        "axes.t4": "HUMANITARIAN AND SOCIAL ACTION",
+        "axes.t5": "AGRICULTURE AND LIVESTOCK",
+        "axes.t6": "EDUCATION",
+        "axes.t7": "PROFESSIONAL SERVICES",
+        "axes.t8": "DEFENSE",
+        "conception.label": "DESIGN",
+        "conception.lead1": "We have cutting-edge expertise in many services, such as: information systems design and development, <span class=\"hl\">business intelligence (BI)</span> and <span class=\"hl\">artificial intelligence (AI)</span>, remote development, technology infrastructure, database administration and systems administration.",
+        "conception.lead2": "Our goal is to support our clients in acquiring, managing and using their data so they can get the most value out of it.",
+        "powered": "Powered by",
+        "cta.title": "Take action",
+        "cta.text": "Contact us for a personalized demo of our tool and discover how it can transform your decision-making process.",
+        "totop": "Back to top",
+    };
+
+    const i18nTargets = [
+        ["data-i18n", (el) => el.innerHTML, (el, v) => { el.innerHTML = v; }],
+        ["data-i18n-label", (el) => el.getAttribute("aria-label"), (el, v) => el.setAttribute("aria-label", v)],
+        ["data-i18n-content", (el) => el.getAttribute("content"), (el, v) => el.setAttribute("content", v)],
+    ];
+
+    // Snapshot the French text before anything (word split) rewrites it
+    const FR = new Map();
+    i18nTargets.forEach(([attr, read]) => {
+        document.querySelectorAll(`[${attr}]`).forEach((el) => FR.set(`${attr}|${el.getAttribute(attr)}`, read(el)));
+    });
+
+    const langSwitch = document.querySelector("[data-lang-switch]");
+
+    const readSavedLang = () => {
+        try {
+            return localStorage.getItem("lang");
+        } catch {
+            return null;
+        }
+    };
+
+    const setLang = (lang) => {
+        root.lang = lang;
+        i18nTargets.forEach(([attr, , write]) => {
+            document.querySelectorAll(`[${attr}]`).forEach((el) => {
+                const key = el.getAttribute(attr);
+                write(el, lang === "en" ? EN[key] : FR.get(`${attr}|${key}`));
+            });
+        });
+        document.querySelectorAll("[data-split-words]").forEach(splitWords);
+        if (langSwitch) {
+            const next = lang === "en" ? "fr" : "en";
+            langSwitch.textContent = next.toUpperCase();
+            langSwitch.lang = next;
+            langSwitch.setAttribute("aria-label", next === "en" ? "English (EN)" : "Français (FR)");
+        }
+    };
+
+    const requestedLang = new URLSearchParams(window.location.search).get("lang")
+        || readSavedLang()
+        || (navigator.language.toLowerCase().startsWith("en") ? "en" : "fr");
+    setLang(requestedLang === "en" ? "en" : "fr");
+
+    langSwitch?.addEventListener("click", () => {
+        const lang = root.lang === "en" ? "fr" : "en";
+        setLang(lang);
+        try {
+            localStorage.setItem("lang", lang);
+        } catch {
+            // Storage blocked (private mode): the choice lasts for this page view only
+        }
     });
 
     /* ----------------------------------------------------------------------
